@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 3000;
 
 app.get("/api/ping", async (req, res) => {
   try {
-    const result = await ping(); // assume ping() returns data directly
-    console.log(result);
-    res.json({ message: "Ping complete", result });
+   await ping(); // assume ping() returns data directly
+  
+    res.json({ message: "Ping complete" });
   } catch (error) {
     res.status(500).json({ message: "Ping failed", error: error.message });
   }
